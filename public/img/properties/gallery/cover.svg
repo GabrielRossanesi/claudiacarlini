@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Gallery Cambui Residence</title>
+  <desc id="desc">Capa provisoria do empreendimento Gallery Cambui Residence</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f6f1"/>
+      <stop offset="0.46" stop-color="#d9d1c2"/>
+      <stop offset="1" stop-color="#171512"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="url(#bg)"/>
+  <rect x="104" y="94" width="1392" height="912" fill="none" stroke="#c2a976" stroke-width="2" opacity="0.72"/>
+  <rect x="206" y="192" width="492" height="654" fill="#fffaf0" opacity="0.82"/>
+  <rect x="750" y="192" width="644" height="258" fill="#030303" opacity="0.82"/>
+  <rect x="750" y="498" width="644" height="348" fill="#c2a976" opacity="0.58"/>
+  <text x="206" y="925" fill="#030303" font-family="Georgia, serif" font-size="82">Gallery Cambui</text>
+  <text x="208" y="982" fill="#5f5a50" font-family="Arial, sans-serif" font-size="25" letter-spacing="8">RESIDENCE • CAMPINAS</text>
+</svg>

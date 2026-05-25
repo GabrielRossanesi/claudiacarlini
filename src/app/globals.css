@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-deep: 3 3 3;
+  --color-deep-soft: 18 17 15;
+  --color-ink: 18 17 15;
+  --color-background: 248 246 241;
+  --color-surface: 255 252 247;
+  --color-pearl: 255 255 255;
+  --color-muted: 112 106 95;
+  --color-line: 222 216 205;
+  --color-accent: 194 169 118;
+  --color-accent-soft: 241 231 211;
+  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: Didot, "Bodoni 72", "Cormorant Garamond", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgb(var(--color-surface)) 0%, rgb(var(--color-background)) 42%, rgb(var(--color-surface)) 100%),
+    rgb(var(--color-background));
+  color: rgb(var(--color-ink));
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: rgb(var(--color-accent-soft));
+  color: rgb(var(--color-ink));
+}
+
+.site-shell {
+  width: min(1160px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.section-y {
+  padding-block: clamp(64px, 8vw, 112px);
+}
+
+.display-font {
+  font-family: var(--font-display);
+}
+
+.eyebrow {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgb(var(--color-accent));
+}
+
+.button-primary,
+.button-secondary,
+.button-dark {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 999px;
+  padding: 0 20px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.button-primary {
+  border: 1px solid rgb(var(--color-accent));
+  background: rgb(var(--color-accent));
+  color: rgb(var(--color-deep));
+  box-shadow: 0 15px 34px rgb(var(--color-accent) / 0.28);
+}
+
+.button-primary:hover,
+.button-secondary:hover,
+.button-dark:hover {
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  border: 1px solid rgb(var(--color-pearl) / 0.42);
+  background: rgb(var(--color-pearl) / 0.12);
+  color: rgb(var(--color-pearl));
+  backdrop-filter: blur(14px);
+}
+
+.button-dark {
+  border: 1px solid rgb(var(--color-deep));
+  background: rgb(var(--color-deep));
+  color: rgb(var(--color-surface));
+}
+
+.button-primary:hover {
+  box-shadow: 0 18px 46px rgb(var(--color-accent) / 0.34);
+}
+
+.button-secondary:hover {
+  border-color: rgb(var(--color-pearl) / 0.72);
+  background: rgb(var(--color-pearl) / 0.18);
+}
+
+.button-dark:hover {
+  border-color: rgb(var(--color-accent));
+  background: rgb(var(--color-deep-soft));
+}
+
+.surface-panel {
+  border: 1px solid rgb(var(--color-deep) / 0.08);
+  background: rgb(var(--color-surface) / 0.9);
+  box-shadow: 0 20px 70px rgb(var(--color-deep) / 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.brand-logo-frame {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgb(var(--color-pearl) / 0.14);
+  background: rgb(var(--color-deep));
+  box-shadow: inset 0 0 0 1px rgb(var(--color-pearl) / 0.04);
+}
+
+.brand-logo-frame img {
+  object-fit: cover;
+  object-position: center 52%;
+}
+
+.luxury-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(var(--color-accent) / 0.72),
+    transparent
+  );
+}
+
+.reveal {
+  animation: reveal 700ms ease both;
+}
+
+.reveal-late {
+  animation: reveal 850ms ease 100ms both;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
