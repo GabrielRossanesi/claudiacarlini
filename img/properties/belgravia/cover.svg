@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Belgravia Nova Campinas</title>
+  <desc id="desc">Capa provisoria do empreendimento Belgravia Nova Campinas</desc>
+  <rect width="1600" height="1100" fill="#141210"/>
+  <rect x="0" y="0" width="1600" height="1100" fill="#f8f6f1" opacity="0.08"/>
+  <path d="M192 874V226h260v648M452 874V226h260v648M712 874V226h260v648M972 874V226h436v648" fill="none" stroke="#c2a976" stroke-width="7" opacity="0.78"/>
+  <rect x="250" y="296" width="144" height="480" fill="#fffaf0" opacity="0.86"/>
+  <rect x="510" y="296" width="144" height="480" fill="#fffaf0" opacity="0.74"/>
+  <rect x="770" y="296" width="144" height="480" fill="#fffaf0" opacity="0.62"/>
+  <text x="188" y="956" fill="#ffffff" font-family="Georgia, serif" font-size="86">Belgravia</text>
+  <text x="192" y="1014" fill="#c2a976" font-family="Arial, sans-serif" font-size="25" letter-spacing="8">NOVA CAMPINAS</text>
+</svg>
