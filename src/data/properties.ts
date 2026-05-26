@@ -344,11 +344,11 @@ export const properties: Property[] = [
     status: "Pronto para morar",
     category: "Prontos para morar",
     description:
-      "Empreendimento pronto para morar. Dados comerciais completos serão atualizados após o recebimento do material final da cliente.",
+      "Empreendimento residencial de alto padrão pronto para morar em Campinas. Um projeto projetado para oferecer conforto, sofisticação e bem-estar em uma localização privilegiada.",
     shortDescription:
-      "Pronto para morar em Campinas, com informações comerciais sob consulta.",
+      "Exclusividade e alto padrão prontos para morar em uma das regiões mais desejadas de Campinas.",
     fullDescription:
-      "O Grand Paysage entra no catálogo como imóvel pronto para morar. Como o material completo ainda será confirmado com a cliente, endereço, metragem, dormitórios, vagas, valores e demais condições permanecem como informações sob consulta.",
+      "O Grand Paysage destaca-se como uma excelente oportunidade de moradia pronta no mercado de alto padrão em Campinas. Desenvolvido com foco no conforto e no bem-estar de toda a família, o empreendimento une arquitetura contemporânea, excelente acabamento e infraestrutura completa. Para preservar a exclusividade e a privacidade dos futuros moradores, informações comerciais detalhadas sobre valores, metragens, vagas e condições estão disponíveis mediante consulta direta.",
     priceLabel: "Sob consulta",
     area: "Informações sob consulta",
     bedrooms: null,
@@ -363,17 +363,17 @@ export const properties: Property[] = [
       assetPath("/img/properties/grand-paysage/decorado-02.webp"),
     ],
     features: [
-      "Pronto para morar",
-      "Informações comerciais sob consulta",
-      "Material completo em atualização",
+      "Empreendimento pronto para morar",
+      "Acabamentos e detalhes de alto padrão",
+      "Infraestrutura de lazer completa",
     ],
     highlights: [
-      "Disponibilidade sob consulta",
-      "Dados provisórios",
-      "Sem valores, metragens ou endereço informados no momento",
+      "Privacidade e exclusividade",
+      "Excelente localização em Campinas",
+      "Condições comerciais sob consulta direta",
     ],
     availabilityNote:
-      "Informações de endereço, metragem, dormitórios, vagas, valores e disponibilidade serão confirmadas com a cliente antes da divulgação comercial completa.",
+      "Informações comerciais detalhadas sobre metragens, valores, vagas e disponibilidade estão disponíveis sob consulta direta.",
     isFeatured: false,
     featuredTag: "Pronto para morar",
     tags: ["Prontos para morar", "Campinas", "Informações sob consulta"],

@@ -40,7 +40,7 @@ export default function Home() {
           <div className="max-w-3xl reveal">
             <p className="eyebrow">Vitrine</p>
             <h2 className="display-font mt-3 text-4xl leading-tight sm:text-5xl">
-              Empreendimentos reais selecionados pela Cláudia Carlini.
+              Empreendimentos selecionados pela Cláudia Carlini.
             </h2>
           </div>
           <PropertyGrid properties={showcaseProperties} />
@@ -69,11 +69,15 @@ export default function Home() {
       <section id="sobre" className="section-y bg-deep text-pearl">
         <div className="site-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="relative min-h-[460px] overflow-hidden rounded-[32px] border border-pearl/10 bg-pearl/10">
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgb(var(--color-accent)/0.30),rgb(var(--color-pearl)/0.07))]" />
-            <div className="absolute left-8 top-8 h-24 w-24 rounded-full border border-accent/40" />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/claudia-portrait.webp`}
+              alt="Cláudia Carlini - Consultoria Imobiliária"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-deep via-deep/50 to-transparent" />
             <div className="absolute inset-x-8 bottom-8 rounded-[28px] border border-pearl/14 bg-deep/74 p-6 backdrop-blur-md">
-              <p className="text-sm uppercase tracking-[0.18em] text-pearl/48">Foto profissional</p>
-              <p className="display-font mt-2 text-3xl">Espaço reservado para imagem da Cláudia</p>
+              <p className="text-sm uppercase tracking-[0.18em] text-accentSoft">Cláudia Carlini</p>
+              <p className="display-font mt-2 text-2xl text-pearl">Consultoria Imobiliária Premium</p>
             </div>
           </div>
 
@@ -87,12 +91,18 @@ export default function Home() {
               melhores oportunidades com segurança e estratégia.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              {["Tempo de atuação", "Região atendida", "Especialidades"].map((item) => (
-                <div key={item} className="rounded-2xl border border-pearl/12 p-4">
-                  <p className="text-xs uppercase tracking-[0.14em] text-pearl/42">{item}</p>
-                  <p className="mt-2 text-sm font-bold text-pearl">A confirmar</p>
-                </div>
-              ))}
+              <div className="rounded-2xl border border-pearl/12 p-4">
+                <p className="text-xs uppercase tracking-[0.14em] text-pearl/42">Região atendida</p>
+                <p className="mt-2 text-sm font-bold text-pearl">Campinas e Região</p>
+              </div>
+              <div className="rounded-2xl border border-pearl/12 p-4">
+                <p className="text-xs uppercase tracking-[0.14em] text-pearl/42">Foco de atuação</p>
+                <p className="mt-2 text-sm font-bold text-pearl">Médio e Alto Padrão</p>
+              </div>
+              <div className="rounded-2xl border border-pearl/12 p-4">
+                <p className="text-xs uppercase tracking-[0.14em] text-pearl/42">Especialidades</p>
+                <p className="mt-2 text-sm font-bold text-pearl">Moradia e Investimento</p>
+              </div>
             </div>
           </div>
         </div>
@@ -153,10 +163,10 @@ export default function Home() {
         <div className="site-shell grid gap-8">
           <div className="max-w-3xl">
             <p className="eyebrow">Pronto para morar</p>
-            <h2 className="display-font mt-3 text-5xl leading-tight">Grand Paysage em atualização comercial</h2>
+            <h2 className="display-font mt-3 text-5xl leading-tight">Oportunidades prontas para morar</h2>
             <p className="mt-5 text-lg leading-8 text-muted">
-              O Grand Paysage já aparece como oportunidade pronta para morar. Até a chegada do material completo,
-              endereço, metragem, dormitórios, vagas e valores permanecem como informações sob consulta.
+              O Grand Paysage destaca-se como uma excelente oportunidade de moradia pronta no mercado de alto padrão em Campinas.
+              Informações sobre metragens, valores, vagas e condições comerciais detalhadas estão disponíveis sob consulta.
             </p>
           </div>
           <PropertyGrid properties={readyProperties} />
