@@ -176,6 +176,9 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
               <div className="mt-5">
                 <PropertyGallery title={property.title} images={property.images} />
               </div>
+              <p className="mt-6 text-xs leading-relaxed text-muted/68">
+                * Valores, disponibilidade, metragens e condições comerciais estão sujeitos à confirmação.
+              </p>
             </div>
           </div>
 
