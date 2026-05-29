@@ -6,7 +6,7 @@ export const siteConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   logo: `${basePath}/img/logo.svg`,
   instagramUrl: "https://www.instagram.com/corretoraclaudiacarlini/?g=5",
-  whatsappLabel: "(19) 99999-9999",
+  whatsappLabel: "(19) 94313-805",
   creciLabel: "CRECI/SP 298048",
   moralesUrl: "https://moralessolucoes.com.br/tecnologia",
   nav: [

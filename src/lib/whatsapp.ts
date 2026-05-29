@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = "5511999999999";
+export const WHATSAPP_NUMBER = "551994313805";
 
 export const whatsappMessages = {
   general:
