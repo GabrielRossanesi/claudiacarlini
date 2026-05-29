@@ -1,10 +1,10 @@
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+import { publicAsset } from "@/lib/public-asset";
 
 export const siteConfig = {
   name: "Cláudia Carlini",
   role: "Consultoria Imobiliária",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  logo: `${basePath}/img/logo.svg`,
+  logo: publicAsset("/img/logo.svg"),
   instagramUrl: "https://www.instagram.com/corretoraclaudiacarlini/?g=5",
   whatsappLabel: "(19) 94313-805",
   creciLabel: "CRECI/SP 298048",

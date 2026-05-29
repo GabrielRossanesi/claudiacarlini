@@ -5,6 +5,7 @@ import { HomeFeaturedVitrine } from "@/components/site/HomeFeaturedVitrine";
 import { getWhatsAppLink, whatsappMessages } from "@/lib/whatsapp";
 import { ScrollReveal } from "@/components/site/ScrollReveal";
 import { siteConfig } from "@/lib/site-config";
+import { publicAsset } from "@/lib/public-asset";
 import { PremiumSectionTitle } from "@/components/site/PremiumSectionTitle";
 
 const categories = [
@@ -112,7 +113,7 @@ export default function Home() {
               
               {/* Optimized Portrait of Cláudia (WebP) rising above the container boundary */}
               <img
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/claudia-pessoal.webp`}
+                src={publicAsset("/img/claudia-pessoal.webp")}
                 alt="Cláudia Carlini"
                 className="absolute -top-12 z-10 h-[calc(100%+48px)] w-[84%] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.9)] transform transition duration-500 hover:scale-[1.02]"
               />

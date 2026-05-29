@@ -1,3 +1,5 @@
+import { publicAsset } from "@/lib/public-asset";
+
 export type PropertyStatus =
   | "Lançamento"
   | "Entrega prevista"
@@ -38,7 +40,7 @@ export type Property = {
   tags: string[];
 };
 
-const assetPath = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+const assetPath = publicAsset;
 
 export const properties: Property[] = [
   {

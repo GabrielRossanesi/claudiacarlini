@@ -1,15 +1,19 @@
 /** @type {import('next').NextConfig} */
 const isGithubPages = process.env.GITHUB_PAGES === "true";
-const basePath = isGithubPages ? "/claudiacarlini" : "";
+const githubPagesConfig = isGithubPages
+  ? {
+      basePath: "/claudiacarlini",
+      assetPrefix: "/claudiacarlini",
+    }
+  : {};
 
 const nextConfig = {
   output: "export",
   trailingSlash: true,
-  basePath,
-  assetPrefix: basePath,
   images: {
     unoptimized: true,
   },
+  ...githubPagesConfig,
 };
 
 export default nextConfig;
