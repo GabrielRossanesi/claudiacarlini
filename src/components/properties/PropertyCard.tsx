@@ -8,7 +8,7 @@ type PropertyCardProps = {
 
 export function PropertyCard({ property }: PropertyCardProps) {
   return (
-    <article className="group overflow-hidden rounded-site border border-line/80 bg-surface shadow-soft transition duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lift">
+    <article className="group h-full flex flex-col overflow-hidden rounded-site border border-line/80 bg-surface shadow-soft transition duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lift">
       <Link href={`/imoveis/${property.slug}`} className="block">
         <div className="relative aspect-[4/3] overflow-hidden bg-accentSoft">
           <img
@@ -29,39 +29,39 @@ export function PropertyCard({ property }: PropertyCardProps) {
         </div>
       </Link>
 
-      <div className="grid gap-5 p-5">
+      <div className="flex flex-col flex-1 gap-5 p-5">
         <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-muted">
+          <p className="text-xs uppercase tracking-[0.18em] text-muted min-h-[18px]">
             {property.neighborhood}, {property.city}
           </p>
           <Link href={`/imoveis/${property.slug}`}>
-            <h3 className="display-font mt-2 text-2xl leading-tight transition group-hover:text-accent">
+            <h3 className="display-font mt-2 text-2xl leading-tight transition group-hover:text-accent line-clamp-2 min-h-[56px]">
               {property.title}
             </h3>
           </Link>
-          <p className="mt-3 line-clamp-2 text-sm leading-6 text-muted">{property.shortDescription}</p>
+          <p className="mt-3 line-clamp-2 text-sm leading-6 text-muted min-h-[48px]">{property.shortDescription}</p>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 border-y border-line/90 py-4 text-sm">
+        <div className="grid grid-cols-2 gap-3 border-y border-line/90 py-4 text-sm min-h-[128px]">
           <span>
-            <strong className="block text-ink">{property.area}</strong>
+            <strong className="block text-ink truncate">{property.area}</strong>
             <span className="text-muted">Metragem</span>
           </span>
           <span>
-            <strong className="block text-ink">{property.bedrooms ?? "Sob consulta"}</strong>
+            <strong className="block text-ink truncate">{property.bedrooms ?? "Sob consulta"}</strong>
             <span className="text-muted">Dormitórios</span>
           </span>
           <span>
-            <strong className="block text-ink">{property.propertyType}</strong>
+            <strong className="block text-ink truncate">{property.propertyType}</strong>
             <span className="text-muted">Tipo</span>
           </span>
           <span>
-            <strong className="block text-ink">{property.priceLabel}</strong>
+            <strong className="block text-ink truncate">{property.priceLabel}</strong>
             <span className="text-muted">Valor</span>
           </span>
         </div>
 
-        <div className="flex flex-col gap-3 sm:flex-row">
+        <div className="mt-auto flex flex-col gap-3 sm:flex-row">
           <Link className="button-dark flex-1" href={`/imoveis/${property.slug}`}>
             Ver detalhes
           </Link>

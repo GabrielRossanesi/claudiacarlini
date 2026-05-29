@@ -6,14 +6,16 @@ import { getWhatsAppLink, whatsappMessages } from "@/lib/whatsapp";
 export function Footer() {
   return (
     <footer className="bg-deep text-pearl">
-      <div className="site-shell grid gap-10 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+      <div className="site-shell grid gap-10 py-12 text-center md:grid-cols-[1.2fr_0.8fr_0.8fr]">
         <div>
-          <div className="brand-logo-frame mb-5 h-20 w-48 rounded-[26px]">
-            <Image src={siteConfig.logo} alt={siteConfig.name} fill sizes="176px" className="object-cover" />
+          <div className="brand-logo-frame mx-auto mb-5 h-20 w-20 rounded-[20px] p-3">
+            <div className="relative h-full w-full">
+              <Image src={siteConfig.logo} alt={siteConfig.name} fill sizes="80px" className="object-contain" />
+            </div>
           </div>
           <p className="display-font text-3xl">{siteConfig.name}</p>
           <p className="mt-2 text-sm uppercase tracking-[0.2em] text-pearl/50">{siteConfig.role}</p>
-          <p className="mt-5 max-w-sm text-sm leading-7 text-pearl/62">
+          <p className="mx-auto mt-5 max-w-sm text-sm leading-7 text-pearl/62">
             Atendimento consultivo para compra, venda e investimento em empreendimentos, com foco em
             confiança, clareza e estratégia.
           </p>
@@ -28,7 +30,6 @@ export function Footer() {
             <a href={getWhatsAppLink(whatsappMessages.general)} target="_blank" className="hover:text-pearl">
               WhatsApp
             </a>
-            <span>{siteConfig.creciLabel}</span>
           </div>
         </div>
 
@@ -49,11 +50,19 @@ export function Footer() {
       </div>
 
       <div className="border-t border-pearl/10">
-        <div className="site-shell flex flex-col gap-3 py-5 text-xs text-pearl/45 sm:flex-row sm:items-center sm:justify-between">
-          <span>© 2026 {siteConfig.name}. Todos os direitos reservados.</span>
-          <a href={siteConfig.moralesUrl} className="hover:text-pearl">
-            Desenvolvido por Morales Soluções
-          </a>
+        <div className="site-shell grid justify-items-center gap-2 py-6 text-center text-xs text-pearl/45">
+          <p>© 2026 {siteConfig.name}. Todos os direitos reservados. • {siteConfig.creciLabel}</p>
+          <p>
+            Desenvolvido por{" "}
+            <a
+              href={siteConfig.moralesUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="font-bold text-accent transition duration-200 hover:text-accentSoft hover:underline"
+            >
+              Morales Soluções
+            </a>
+          </p>
         </div>
       </div>
     </footer>
