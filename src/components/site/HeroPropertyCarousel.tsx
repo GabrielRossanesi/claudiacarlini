@@ -105,56 +105,99 @@ export function HeroPropertyCarousel({ properties }: HeroPropertyCarouselProps) 
       <div className="absolute inset-0 hidden md:block bg-[radial-gradient(circle_at_18%_82%,rgb(var(--color-accent)/0.28),transparent_26rem)] z-[2]" />
       <div className="absolute inset-x-0 bottom-0 hidden md:block h-48 bg-gradient-to-t from-deep to-transparent z-[2]" />
 
-      <div className="site-shell relative z-10 flex min-h-[100svh] items-end pb-[calc(1rem+env(safe-area-inset-bottom))] pt-20 md:pb-14 md:pt-28">
-        <div className="grid max-w-3xl gap-4 md:gap-7 reveal">
-          {/* Desktop Title (Unchanged) */}
+      {/* Main shell: flex container that stretches to 100svh. On mobile it distributes items (Title top, info bottom) */}
+      <div className="site-shell relative z-10 flex min-h-[100svh] flex-col justify-between pb-[calc(1.2rem+env(safe-area-inset-bottom))] pt-24 md:flex-row md:items-end md:justify-start md:pb-14 md:pt-28">
+        
+        {/* MOBILE EXCLUSIVE LAYOUT (hidden on desktop) */}
+        <div className="flex flex-col h-full w-full justify-between flex-grow md:hidden reveal">
+          {/* Top Block: kicker + title principal positioned near the top of viewport */}
+          <div className="w-full">
+            <PremiumSectionTitle
+              kicker="Cláudia Carlini"
+              title="Empreendimentos em Campinas"
+              theme="dark"
+              align="left"
+              titleAs="h1"
+              className="max-w-[90%] [&_h1]:text-[34px] [&_h1]:min-[380px]:text-[38px] [&_h1]:leading-[1.05]"
+            />
+          </div>
+
+          {/* Bottom Block: Info + 1 CTA + dots pagination */}
+          <div className="w-full flex flex-col gap-4 mt-auto">
+            {/* Info Block */}
+            <div className="border-l border-accent pl-4">
+              <p className="text-[9px] min-[380px]:text-[10px] uppercase tracking-[0.1em] text-pearl/60 whitespace-nowrap overflow-hidden text-ellipsis">
+                {activeProperty.status} · {activeProperty.neighborhood}, {activeProperty.city}
+              </p>
+              <h2 className="display-font mt-1 text-[26px] min-[380px]:text-[28px] text-pearl leading-tight">{activeProperty.title}</h2>
+              <p className="mt-1.5 max-w-xl text-xs leading-[1.35] text-pearl/70 line-clamp-2">
+                {activeProperty.shortDescription}
+              </p>
+            </div>
+
+            {/* CTA Button */}
+            <div className="flex flex-col">
+              <Link className="button-primary w-full" href={`/imoveis/${activeProperty.slug}`}>
+                Ver detalhes
+              </Link>
+            </div>
+
+            {/* Dots Pagination */}
+            <div className="flex gap-1.5 flex-wrap max-w-[280px]">
+              {properties.map((property, index) => (
+                <button
+                  key={property.id}
+                  type="button"
+                  aria-label={`Mostrar ${property.title}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    index === activeIndex 
+                      ? "w-5 bg-accent" 
+                      : "w-1.5 bg-pearl/30 hover:bg-pearl/60"
+                  }`}
+                  onClick={() => setActiveIndex(index)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* DESKTOP EXCLUSIVE LAYOUT (hidden on mobile) - 100% exactly matching the approved desktop code */}
+        <div className="hidden md:grid max-w-3xl gap-7 reveal">
           <PremiumSectionTitle
             kicker="Cláudia Carlini"
             title="Empreendimentos selecionados em Campinas."
             theme="dark"
             align="left"
             titleAs="h1"
-            className="mb-1 hidden md:block max-w-3xl [&_h1]:text-6xl lg:[&_h1]:text-7xl [&_h1]:leading-[0.95]"
+            className="mb-1"
           />
 
-          {/* Mobile Title (Simplified & Compact) */}
-          <PremiumSectionTitle
-            kicker="Cláudia Carlini"
-            title="Empreendimentos em Campinas"
-            theme="dark"
-            align="left"
-            titleAs="h1"
-            className="mb-0.5 md:hidden max-w-[90%] [&_h1]:text-[34px] [&_h1]:min-[380px]:text-[38px] [&_h1]:leading-[1.05]"
-          />
-
-          <div className="max-w-2xl border-l border-accent pl-4 md:pl-5 mt-1.5 md:mt-0">
-            <p className="text-[9px] min-[380px]:text-[10px] md:text-sm uppercase tracking-[0.1em] md:tracking-[0.18em] text-pearl/60 whitespace-nowrap overflow-hidden text-ellipsis">
+          <div className="max-w-2xl border-l border-accent pl-5">
+            <p className="text-sm uppercase tracking-[0.18em] text-pearl/60">
               {activeProperty.status} · {activeProperty.neighborhood}, {activeProperty.city}
             </p>
-            <h2 className="display-font mt-1 md:mt-2 text-[26px] min-[380px]:text-[28px] md:text-3xl text-pearl leading-tight">{activeProperty.title}</h2>
-            <p className="mt-1.5 md:mt-3 max-w-xl text-xs md:text-base leading-[1.35] md:leading-7 text-pearl/70 line-clamp-2 md:line-clamp-none">
-              {activeProperty.shortDescription}
-            </p>
+            <h2 className="display-font mt-2 text-3xl text-pearl">{activeProperty.title}</h2>
+            <p className="mt-3 max-w-xl text-base leading-7 text-pearl/76">{activeProperty.shortDescription}</p>
           </div>
 
-          <div className="flex flex-col gap-2.5 sm:flex-row sm:gap-3 mt-1 md:mt-0">
-            <Link className="button-primary w-full sm:w-auto" href={`/imoveis/${activeProperty.slug}`}>
+          <div className="flex gap-3">
+            <Link className="button-primary" href={`/imoveis/${activeProperty.slug}`}>
               Ver detalhes
             </Link>
-            <a
-              className="button-secondary w-full sm:w-auto text-xs min-h-[38px] py-1 md:min-h-[46px] md:py-0 md:text-[0.92rem] hidden md:inline-flex"
-              href={getPropertyWhatsAppLink(activeProperty.title)}
+            <a 
+              className="button-secondary" 
+              href={getPropertyWhatsAppLink(activeProperty.title)} 
               target="_blank"
             >
               Falar com a Cláudia
             </a>
           </div>
 
-          <div className="hidden md:grid max-w-2xl grid-cols-3 gap-px overflow-hidden rounded-xl md:rounded-2xl border border-pearl/12 bg-pearl/12 backdrop-blur-md">
+          <div className="grid max-w-2xl grid-cols-3 gap-px overflow-hidden rounded-2xl border border-pearl/12 bg-pearl/12 backdrop-blur-md">
             {heroStats.map((stat) => (
-              <div key={stat.label} className="bg-pearl/8 p-2.5 min-[380px]:p-3.5 md:p-4">
-                <p className="text-[0.58rem] min-[380px]:text-[0.65rem] md:text-[0.68rem] uppercase tracking-[0.12em] md:tracking-[0.16em] text-pearl/50">{stat.label}</p>
-                <p className="mt-0.5 md:mt-1 text-[11px] min-[380px]:text-xs md:text-sm font-bold text-pearl leading-tight">{stat.value}</p>
+              <div key={stat.label} className="bg-pearl/8 p-4">
+                <p className="text-[0.68rem] uppercase tracking-[0.16em] text-pearl/50">{stat.label}</p>
+                <p className="mt-1 text-sm font-bold text-pearl">{stat.value}</p>
               </div>
             ))}
           </div>
@@ -162,16 +205,14 @@ export function HeroPropertyCarousel({ properties }: HeroPropertyCarouselProps) 
           {/* Navigation Controls Bar */}
           <div className="flex items-center gap-4 mt-2">
             {/* Dots Pagination */}
-            <div className="flex gap-1 md:gap-1.5 flex-wrap max-w-[280px] sm:max-w-md">
+            <div className="flex gap-1.5 flex-wrap max-w-[280px] sm:max-w-md">
               {properties.map((property, index) => (
                 <button
                   key={property.id}
                   type="button"
                   aria-label={`Mostrar ${property.title}`}
-                  className={`h-1 md:h-1.5 rounded-full transition-all duration-300 ${
-                    index === activeIndex
-                      ? "w-4 md:w-6 bg-accent"
-                      : "w-1 md:w-1.5 bg-pearl/30 hover:bg-pearl/60"
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    index === activeIndex ? "w-6 bg-accent" : "w-1.5 bg-pearl/30 hover:bg-pearl/60"
                   }`}
                   onClick={() => setActiveIndex(index)}
                 />
@@ -179,10 +220,10 @@ export function HeroPropertyCarousel({ properties }: HeroPropertyCarouselProps) 
             </div>
 
             {/* Visual separator */}
-            <span className="hidden md:block h-4 w-px bg-pearl/20" />
+            <span className="h-4 w-px bg-pearl/20" />
 
             {/* Arrow navigation buttons */}
-            <div className="hidden md:flex gap-2">
+            <div className="flex gap-2">
               <button
                 type="button"
                 onClick={handlePrev}
@@ -220,6 +261,7 @@ export function HeroPropertyCarousel({ properties }: HeroPropertyCarouselProps) 
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
