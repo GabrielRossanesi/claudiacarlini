@@ -1,13 +1,66 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { getWhatsAppLink, whatsappMessages } from "@/lib/whatsapp";
 
 export function FloatingWhatsAppButton() {
+  const pathname = usePathname();
+  const [isInHero, setIsInHero] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => window.innerWidth < 768;
+
+    const heroElement = document.getElementById("home-hero");
+    if (!heroElement || !checkMobile()) {
+      setIsInHero(false);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInHero(entry.isIntersecting);
+      },
+      {
+        threshold: 0, // Trigger when any part of the hero is visible
+      }
+    );
+
+    observer.observe(heroElement);
+
+    const handleResize = () => {
+      const isMobile = checkMobile();
+      const element = document.getElementById("home-hero");
+
+      if (!isMobile || !element) {
+        setIsInHero(false);
+        observer.disconnect();
+      } else {
+        observer.observe(element);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [pathname]);
+
+  const showButton = !isInHero;
+
   return (
     <a
       href={getWhatsAppLink(whatsappMessages.general)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar com a Claudia pelo WhatsApp"
-      className="group fixed bottom-24 right-4 z-[70] inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition duration-300 hover:-translate-y-1 hover:bg-[#20ba5a] hover:shadow-[0_6px_20px_rgba(32,186,90,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25d366] focus-visible:ring-offset-2 md:bottom-6 md:right-6"
+      className={`group fixed bottom-24 right-4 z-[70] inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#20ba5a] hover:shadow-[0_6px_20px_rgba(32,186,90,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25d366] focus-visible:ring-offset-2 md:bottom-6 md:right-6 ${
+        showButton
+          ? "opacity-100 translate-y-0 pointer-events-auto"
+          : "opacity-0 translate-y-10 pointer-events-none md:opacity-100 md:translate-y-0 md:pointer-events-auto"
+      }`}
     >
       <svg
         aria-hidden="true"
