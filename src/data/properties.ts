@@ -682,7 +682,7 @@ export const properties: Property[] = [
     deliveryLabel: "Previsão de entrega sob consulta",
     availabilityNote: "Valores, availability, metragens e condições comerciais estão sujeitos à confirmação.",
     showInHero: true,
-    heroImage: assetPath("/img/properties/wide-nova-campinas/fachada.webp"),
+    heroImage: assetPath("/img/properties/wide-nova-campinas/fachada-wide.jpg"),
     floorPlanImage: assetPath("/img/properties/wide-nova-campinas/planta-01.webp"),
     isFeatured: true,
     tags: ["Lançamentos", "Nova Campinas", "Campinas", "EBM"],
