@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PropertyPhotosPageProps): Pro
     openGraph: {
       title: `Fotos de ${property.title} | Cláudia Carlini`,
       description: property.description,
-      images: [{ url: property.images[0], width: 1200, height: 630, alt: property.title }],
+      images: [{ url: property.coverImage ?? property.images[0], width: 1200, height: 630, alt: property.title }],
     },
   };
 }

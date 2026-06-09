@@ -7,6 +7,7 @@ import { PropertyGrid } from "@/components/properties/PropertyGrid";
 import { PropertyPhotoShowcase } from "@/components/properties/PropertyPhotoShowcase";
 import { getPropertyWhatsAppLink } from "@/lib/whatsapp";
 import { PremiumSectionTitle } from "@/components/site/PremiumSectionTitle";
+import { PropertyFloorPlanSection } from "@/components/properties/PropertyFloorPlanSection";
 
 type PropertyPageProps = {
   params: Promise<{ slug: string }>;
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: PropertyPageProps): Promise<M
     openGraph: {
       title: `${property.title} | Cláudia Carlini`,
       description: property.description,
-      images: [{ url: property.images[0], width: 1200, height: 630, alt: property.title }],
+      images: [{ url: property.coverImage ?? property.images[0], width: 1200, height: 630, alt: property.title }],
     },
   };
 }
@@ -190,84 +191,12 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
               </div>
 
               {/* Seção: Plantas e Tipologias */}
-              {property.floorPlans ||
-              property.images.some(
-                (img) =>
-                  img.toLowerCase().includes("planta") ||
-                  img.toLowerCase().includes("page-06") ||
-                  img.toLowerCase().includes("planta-01"),
-              ) ? (
-                <div className="grid gap-4">
-                  <PremiumSectionTitle
-                    title="Plantas e Tipologias"
-                    theme="light"
-                    intensity="subtle"
-                    titleAs="h2"
-                    align="left"
-                    className="mb-1"
-                  />
-                  {property.floorPlans ? (
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      {property.floorPlans.map((plan) => (
-                        <div
-                          key={plan}
-                          className="rounded-xl border border-line bg-surface p-4 text-sm font-semibold text-muted/90 flex items-center gap-2"
-                        >
-                          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                          {plan}
-                        </div>
-                      ))}
-                    </div>
-                  ) : null}
-
-                  {/* Localizador Automático de Imagem da Planta */}
-                  {(() => {
-                    const plantImage = property.images.find(
-                      (img) =>
-                        img.toLowerCase().includes("planta") ||
-                        img.toLowerCase().includes("page-06") ||
-                        img.toLowerCase().includes("planta-01"),
-                    );
-
-                    if (!plantImage) return null;
-
-                    return (
-                      <div className="mt-4 overflow-hidden rounded-[20px] border border-line bg-surface group transition hover:border-accent/40 shadow-soft">
-                        <div className="relative aspect-[16/10] w-full">
-                          <Image
-                            src={plantImage}
-                            alt={`Planta do empreendimento ${property.title}`}
-                            fill
-                            sizes="(min-width: 1024px) 58vw, 100vw"
-                            className="object-cover transition duration-700 group-hover:scale-[1.015]"
-                          />
-                        </div>
-                        <div className="bg-surface border-t border-line px-5 py-3.5 flex justify-between items-center">
-                          <span className="text-xs font-bold text-muted uppercase tracking-wider">
-                            Planta Ilustrativa
-                          </span>
-                          <Link
-                            href={`/imoveis/${property.slug}/fotos`}
-                            className="text-xs font-extrabold text-accent hover:text-ink transition duration-200 uppercase tracking-wider flex items-center gap-1"
-                          >
-                            Ver em alta definição
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth={2.5}
-                              stroke="currentColor"
-                              className="w-3 h-3"
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                          </Link>
-                        </div>
-                      </div>
-                    );
-                  })()}
-                </div>
-              ) : null}
+              <PropertyFloorPlanSection
+                title={property.title}
+                floorPlans={property.floorPlans}
+                floorPlanImage={property.floorPlanImage}
+                allImages={property.images}
+              />
 
               {/* Seção: Localização */}
               <div className="grid gap-4">

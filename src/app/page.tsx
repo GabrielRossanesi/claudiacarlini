@@ -1,4 +1,4 @@
-import { featuredProperties, properties } from "@/data/properties";
+import { featuredProperties, properties, heroProperties } from "@/data/properties";
 import { HeroPropertyCarousel } from "@/components/site/HeroPropertyCarousel";
 import { HomePropertySearch } from "@/components/site/HomePropertySearch";
 import { HomeFeaturedVitrine } from "@/components/site/HomeFeaturedVitrine";
@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       {/* 1. Hero / carrossel de destaques */}
-      <HeroPropertyCarousel properties={featuredProperties} />
+      <HeroPropertyCarousel properties={heroProperties} />
 
       {/* 2. Busca rápida / chamada para catálogo */}
       <HomePropertySearch properties={properties} />

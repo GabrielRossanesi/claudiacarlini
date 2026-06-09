@@ -38,6 +38,10 @@ export type Property = {
   isFeatured: boolean;
   featuredTag?: string;
   tags: string[];
+  heroImage?: string;
+  showInHero?: boolean;
+  coverImage?: string;
+  floorPlanImage?: string;
 };
 
 const assetPath = publicAsset;
@@ -64,6 +68,11 @@ export const properties: Property[] = [
     parkingSpaces: null,
     propertyType: "Residencial",
     images: [
+      assetPath("/img/properties/gallery-cambui/fachada.webp"),
+      assetPath("/img/properties/gallery-cambui/decorado-01.webp"),
+      assetPath("/img/properties/gallery-cambui/decorado-02.webp"),
+      assetPath("/img/properties/gallery-cambui/area-comum-01.webp"),
+      assetPath("/img/properties/gallery-cambui/area-comum-02.webp"),
       assetPath("/img/properties/gallery-cambui-residence/page-01.webp"),
       assetPath("/img/properties/gallery-cambui-residence/page-02.webp"),
       assetPath("/img/properties/gallery-cambui-residence/page-03.webp"),
@@ -81,6 +90,7 @@ export const properties: Property[] = [
       assetPath("/img/properties/gallery-cambui-residence/page-15.webp"),
       assetPath("/img/properties/gallery-cambui-residence/page-16.webp"),
       assetPath("/img/properties/gallery-cambui-residence/page-17.webp"),
+      assetPath("/img/properties/gallery-cambui/planta-01.webp"),
     ],
     features: [
       "Empreendimento residencial",
@@ -93,6 +103,7 @@ export const properties: Property[] = [
       "Conceito inspirado em galerias de arte",
       "Foco em bem-estar e qualidade de vida",
     ],
+    floorPlanImage: assetPath("/img/properties/gallery-cambui-residence/page-08.webp"),
     isFeatured: true,
     featuredTag: "Acabou de lançar",
     tags: ["Lançamentos", "Acabou de lançar", "Cambuí", "Campinas"],
@@ -136,6 +147,9 @@ export const properties: Property[] = [
       "Inspiração londrina",
       "Tradição, modernidade e conforto",
     ],
+    showInHero: true,
+    heroImage: assetPath("/img/properties/belgravia/fachada.webp"),
+    floorPlanImage: assetPath("/img/properties/belgravia/decorado-01.webp"),
     isFeatured: true,
     featuredTag: "Acabou de lançar",
     tags: ["Lançamentos", "Acabou de lançar", "Nova Campinas", "Campinas"],
@@ -187,6 +201,7 @@ export const properties: Property[] = [
       "Duplex de aproximadamente 62,04 m²",
       "Duplex com 2 quartos na cobertura",
     ],
+    floorPlanImage: assetPath("/img/properties/alto-das-mansoes/fachada.webp"),
     isFeatured: true,
     featuredTag: "Investimento",
     tags: ["Lançamentos", "Investimento", "Acabou de lançar", "Santa Cândida", "Campinas", "Studios"],
@@ -221,15 +236,12 @@ export const properties: Property[] = [
       assetPath("/img/properties/hox-cambui/page-07.webp"),
       assetPath("/img/properties/hox-cambui/page-08.webp"),
       assetPath("/img/properties/hox-cambui/page-09.webp"),
-      assetPath("/img/properties/hox-cambui/page-10.webp"),
-      assetPath("/img/properties/hox-cambui/page-11.webp"),
       assetPath("/img/properties/hox-cambui/page-12.webp"),
       assetPath("/img/properties/hox-cambui/page-13.webp"),
       assetPath("/img/properties/hox-cambui/page-14.webp"),
       assetPath("/img/properties/hox-cambui/page-15.webp"),
       assetPath("/img/properties/hox-cambui/page-16.webp"),
       assetPath("/img/properties/hox-cambui/page-17.webp"),
-      assetPath("/img/properties/hox-cambui/page-18.webp"),
       assetPath("/img/properties/hox-cambui/page-19.webp"),
       assetPath("/img/properties/hox-cambui/page-20.webp"),
       assetPath("/img/properties/hox-cambui/page-21.webp"),
@@ -248,24 +260,21 @@ export const properties: Property[] = [
       assetPath("/img/properties/hox-cambui/page-34.webp"),
       assetPath("/img/properties/hox-cambui/page-35.webp"),
       assetPath("/img/properties/hox-cambui/page-36.webp"),
+      assetPath("/img/properties/hox-cambui/decorado-01.webp"),
+      assetPath("/img/properties/hox-cambui/decorado-02.webp"),
       assetPath("/img/properties/hox-cambui/page-37.webp"),
       assetPath("/img/properties/hox-cambui/page-38.webp"),
-      assetPath("/img/properties/hox-cambui/page-39.webp"),
       assetPath("/img/properties/hox-cambui/page-40.webp"),
       assetPath("/img/properties/hox-cambui/page-41.webp"),
       assetPath("/img/properties/hox-cambui/page-42.webp"),
       assetPath("/img/properties/hox-cambui/page-43.webp"),
       assetPath("/img/properties/hox-cambui/page-44.webp"),
-      assetPath("/img/properties/hox-cambui/page-45.webp"),
       assetPath("/img/properties/hox-cambui/page-46.webp"),
       assetPath("/img/properties/hox-cambui/page-47.webp"),
-      assetPath("/img/properties/hox-cambui/page-48.webp"),
       assetPath("/img/properties/hox-cambui/page-49.webp"),
       assetPath("/img/properties/hox-cambui/page-50.webp"),
-      assetPath("/img/properties/hox-cambui/page-51.webp"),
       assetPath("/img/properties/hox-cambui/page-52.webp"),
       assetPath("/img/properties/hox-cambui/page-53.webp"),
-      assetPath("/img/properties/hox-cambui/page-54.webp"),
       assetPath("/img/properties/hox-cambui/page-55.webp"),
       assetPath("/img/properties/hox-cambui/page-56.webp"),
       assetPath("/img/properties/hox-cambui/page-57.webp"),
@@ -293,6 +302,8 @@ export const properties: Property[] = [
     ],
     availabilityNote:
       "Valores de referência sujeitos à disponibilidade das unidades e confirmação com a incorporadora.",
+    coverImage: assetPath("/img/properties/hox-cambui/page-03.webp"),
+    floorPlanImage: assetPath("/img/properties/hox-cambui/page-37.webp"),
     isFeatured: true,
     featuredTag: "Investimento",
     tags: ["Lançamentos", "Investimento", "Acabou de lançar", "Cambuí", "Campinas", "Studios", "Lofts"],
@@ -375,6 +386,7 @@ export const properties: Property[] = [
       "110 m², 3 suítes, 2 vagas e 1 depósito privativo",
     ],
     deliveryLabel: "Entrega em setembro de 2026",
+    floorPlanImage: assetPath("/img/properties/luce-cambui/decorado-02.webp"),
     isFeatured: true,
     featuredTag: "Entrega 2026",
     tags: ["Entrega prevista", "Cambuí", "Campinas", "Apartamentos"],
@@ -466,6 +478,9 @@ export const properties: Property[] = [
       "Configurações com até 3 suítes",
     ],
     deliveryLabel: "Entrega prevista para março de 2027",
+    floorPlanImage: assetPath("/img/properties/intento-cambui/planta-01.webp"),
+    showInHero: true,
+    heroImage: assetPath("/img/properties/intento-cambui/area-comum-01.webp"),
     isFeatured: true,
     featuredTag: "Entrega 2027",
     tags: ["Entrega prevista", "Cambuí", "Campinas", "Apartamentos"],
@@ -608,6 +623,9 @@ export const properties: Property[] = [
     ],
     deliveryLabel: "Previsão de entrega sob consulta",
     availabilityNote: "Valores, disponibilidade, metragens e condições comerciais estão sujeitos à confirmação.",
+    showInHero: true,
+    heroImage: assetPath("/img/properties/wyn-residence/fachada.webp"),
+    floorPlanImage: assetPath("/img/properties/wyn-residence/planta-01.webp"),
     isFeatured: true,
     tags: ["Lançamentos", "Vila Bella Dom Pedro", "Campinas", "Acro"],
   },
@@ -663,6 +681,9 @@ export const properties: Property[] = [
     ],
     deliveryLabel: "Previsão de entrega sob consulta",
     availabilityNote: "Valores, availability, metragens e condições comerciais estão sujeitos à confirmação.",
+    showInHero: true,
+    heroImage: assetPath("/img/properties/wide-nova-campinas/fachada.webp"),
+    floorPlanImage: assetPath("/img/properties/wide-nova-campinas/planta-01.webp"),
     isFeatured: true,
     tags: ["Lançamentos", "Nova Campinas", "Campinas", "EBM"],
   },
@@ -708,6 +729,8 @@ export const properties: Property[] = [
       "Floresta de bolso sustentável",
       "Arquitetura de destaque nacional",
     ],
+    showInHero: true,
+    heroImage: assetPath("/img/properties/avenida-105/hero.webp"),
     isFeatured: true,
     tags: ["Lançamentos", "Casa Figueira", "Campinas", "Apartamentos"],
   },
@@ -1346,6 +1369,18 @@ export const properties: Property[] = [
 export const testProperties: Property[] = [];
 
 export const featuredProperties = properties.filter((property) => property.isFeatured);
+
+const heroSlugsOrder = [
+  "wyn-residence",
+  "belgravia-nova-campinas",
+  "avenida-105",
+  "wide-nova-campinas",
+  "intento-cambui"
+];
+
+export const heroProperties = heroSlugsOrder
+  .map((slug) => properties.find((property) => property.slug === slug))
+  .filter((property): property is Property => !!property);
 
 export function getPropertyBySlug(slug: string) {
   return [...properties, ...testProperties].find((property) => property.slug === slug);

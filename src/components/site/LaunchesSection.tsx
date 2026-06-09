@@ -129,7 +129,7 @@ export function LaunchesSection({ properties, whatsappLink }: LaunchesSectionPro
             >
               <div className="aspect-[4/3] overflow-hidden relative">
                 <img
-                  src={property.images[0]}
+                  src={property.coverImage ?? property.images[0]}
                   alt={property.title}
                   loading="lazy"
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"

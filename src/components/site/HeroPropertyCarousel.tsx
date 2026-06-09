@@ -56,7 +56,7 @@ export function HeroPropertyCarousel({ properties }: HeroPropertyCarouselProps) 
       {properties.map((property, index) => (
         <img
           key={property.id}
-          src={property.images[0]}
+          src={property.heroImage ?? property.images[0]}
           alt={property.title}
           className={`absolute inset-0 h-full w-full object-cover transition duration-1000 ${
             index === activeIndex ? "scale-100 opacity-100" : "scale-105 opacity-0"

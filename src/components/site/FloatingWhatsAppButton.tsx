@@ -7,20 +7,24 @@ export function FloatingWhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar com a Claudia pelo WhatsApp"
-      className="group fixed bottom-24 right-4 z-[70] inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#25d366]/80 bg-deep/55 text-[#25d366] shadow-[0_18px_42px_rgba(0,0,0,0.24)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-[#25d366] hover:bg-[#25d366]/10 hover:shadow-[0_22px_52px_rgba(37,211,102,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25d366] focus-visible:ring-offset-2 focus-visible:ring-offset-deep md:bottom-6 md:right-6"
+      className="group fixed bottom-24 right-4 z-[70] inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition duration-300 hover:-translate-y-1 hover:bg-[#20ba5a] hover:shadow-[0_6px_20px_rgba(32,186,90,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25d366] focus-visible:ring-offset-2 md:bottom-6 md:right-6"
     >
       <svg
         aria-hidden="true"
-        viewBox="0 0 32 32"
-        className="h-7 w-7 shrink-0 transition duration-300 group-hover:scale-105"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.8"
+        viewBox="0 0 24 24"
+        className="h-8 w-8 shrink-0 transition duration-300 group-hover:scale-105"
+        fill="currentColor"
       >
-        <path d="M16 4.5A11.5 11.5 0 0 0 6.2 22l-1.4 5.2 5.35-1.25A11.5 11.5 0 1 0 16 4.5Z" />
-        <path d="M12 10.8c-.3 0-.78.1-1.18.54-.4.43-1.52 1.48-1.52 3.62 0 2.13 1.56 4.2 1.78 4.48.22.3 3.02 4.78 7.42 6.48 3.1 1.2 4.24 1.02 5 .9.76-.11 2.44-1 2.78-1.98.34-.98.34-1.8.24-1.98-.1-.18-.38-.28-.8-.5-.42-.2-2.46-1.21-2.84-1.34-.38-.14-.66-.2-.94.22-.28.42-1.08 1.34-1.33 1.62-.24.28-.48.31-.9.1-.42-.2-1.76-.65-3.36-2.08-1.24-1.1-2.08-2.48-2.32-2.9-.24-.42-.03-.65.18-.86.2-.2.42-.5.63-.74.2-.25.28-.42.42-.7.14-.28.07-.52-.04-.74-.1-.2-.94-2.26-1.28-3.1-.34-.8-.68-.74-.94-.75H12Z" />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12.031 2C6.49 2 2 6.49 2 12.03c0 1.8.48 3.56 1.39 5.11L2 22l5.05-1.33c1.5.82 3.19 1.25 4.98 1.25 5.54 0 10.03-4.49 10.03-10.03C22.062 6.49 17.57 2 12.03 2zm6.01 13.9c-.25.68-1.24 1.25-1.85 1.33-.48.06-1.1.28-3.23-.61-2.73-1.14-4.51-3.92-4.65-4.1-.14-.18-1.12-1.49-1.12-2.84 0-1.35.7-2.02.95-2.29.25-.27.54-.34.72-.34.18 0 .36 0 .52.01.17 0 .4.06.6.53.21.5.73 1.77.79 1.9.06.12.1.27.02.43-.08.16-.12.26-.25.41-.12.14-.26.31-.37.42-.12.12-.25.26-.11.5.14.24.62 1.02 1.33 1.66.92.82 1.69 1.07 1.93 1.19.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.19 1.26z"
+          fill="#FFF"
+        />
+        <path
+          d="M18.04 15.9c-.25.68-1.24 1.25-1.85 1.33-.48.06-1.1.28-3.23-.61-2.73-1.14-4.51-3.92-4.65-4.1-.14-.18-1.12-1.49-1.12-2.84 0-1.35.7-2.02.95-2.29.25-.27.54-.34.72-.34.18 0 .36 0 .52.01.17 0 .4.06.6.53.21.5.73 1.77.79 1.9.06.12.1.27.02.43-.08.16-.12.26-.25.41-.12.14-.26.31-.37.42-.12.12-.25.26-.11.5.14.24.62 1.02 1.33 1.66.92.82 1.69 1.07 1.93 1.19.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.19 1.26z"
+          fill="#25D366"
+        />
       </svg>
     </a>
   );

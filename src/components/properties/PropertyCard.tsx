@@ -12,7 +12,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
       <Link href={`/imoveis/${property.slug}`} className="block">
         <div className="relative aspect-[4/3] overflow-hidden bg-accentSoft">
           <img
-            src={property.images[0]}
+            src={property.coverImage ?? property.images[0]}
             alt={property.title}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
           />
