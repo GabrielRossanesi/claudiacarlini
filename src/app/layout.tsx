@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { FloatingWhatsAppButton } from "@/components/site/FloatingWhatsAppButton";
+import { GoogleTagManager } from "@/components/GoogleTagManager";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
+        <GoogleTagManager />
         <Header />
         <main className="pt-[78px] md:pt-[82px]">{children}</main>
         <Footer />
